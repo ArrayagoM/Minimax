@@ -1,14 +1,18 @@
-/* src/components/Square.css (REEMPLAZAR) */
-
 .square {
   background: rgba(14, 14, 48, 0.5);
   border: 3px solid var(--color-dark-accent);
-  float: left;
-  font-size: calc(var(--cell-size) * 0.5);
+
+  /* CAMBIO CLAVE: Se eliminan 'width' y 'height' fijos. 
+     El tamaño ahora lo define la cuadrícula del tablero (.board).
+     'aspect-ratio' asegura que la casilla sea siempre un cuadrado perfecto. */
+  width: 100%;
+  aspect-ratio: 1 / 1;
+
+  /* CAMBIO CLAVE: El tamaño de la fuente ahora es relativo al tamaño de la casilla.
+     'vw' (viewport width) es una buena opción para que escale con la pantalla. */
+  font-size: 12vmin;
   font-weight: 900;
-  line-height: 1;
-  height: var(--cell-size);
-  width: var(--cell-size);
+
   padding: 0;
   text-align: center;
   cursor: pointer;

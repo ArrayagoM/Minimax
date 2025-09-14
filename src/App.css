@@ -4,10 +4,10 @@
   --color-secondary: #00f7ff;
   --color-dark-accent: #16213e;
   --color-light: #f0f0f0;
-  --shadow-primary: 0 0 5px var(--color-primary), 0 0 15px var(--color-primary),
-    0 0 25px var(--color-primary);
-  --shadow-secondary: 0 0 5px var(--color-secondary), 0 0 15px var(--color-secondary),
-    0 0 25px var(--color-secondary);
+  --shadow-primary: 0 0 4px var(--color-primary), 0 0 12px var(--color-primary),
+    0 0 18px var(--color-primary);
+  --shadow-secondary: 0 0 4px var(--color-secondary), 0 0 12px var(--color-secondary),
+    0 0 18px var(--color-secondary);
 }
 
 .App {
@@ -85,8 +85,8 @@
 }
 
 .tiktok-footer {
-  position: fixed;
-  bottom: 10px;
+  /* Se usa margin-top en lugar de position fixed para evitar superposiciones */
+  margin-top: 30px;
   font-size: 1.2rem;
   color: var(--color-secondary);
   text-shadow: var(--shadow-secondary);
@@ -106,6 +106,8 @@
   background: var(--color-dark-accent);
   border-radius: 20px;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  width: 90%;
+  max-width: 500px;
 }
 
 .player-selection-screen h2 {
@@ -131,6 +133,9 @@
   border-radius: 15px;
   cursor: pointer;
   transition: all 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .player-button:hover {
@@ -197,4 +202,46 @@
   color: var(--color-bg);
   border-color: var(--color-primary);
   box-shadow: 0 0 15px var(--color-secondary);
+}
+
+@media (max-width: 768px) {
+  .game-title {
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+  }
+
+  .player-buttons {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .player-button {
+    width: 220px;
+    height: 120px;
+  }
+
+  .player-button span {
+    font-size: 4rem;
+  }
+
+  .status-message {
+    font-size: 1.8rem;
+    height: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .game-title {
+    font-size: 2.2rem;
+  }
+  .player-button {
+    width: 180px;
+    height: 100px;
+  }
+  .player-button span {
+    font-size: 3.5rem;
+  }
+  .status-message {
+    font-size: 1.5rem;
+  }
 }

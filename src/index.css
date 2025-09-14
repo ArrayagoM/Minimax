@@ -9,5 +9,6 @@ body {
 
   background-color: #1a1a2e;
   color: #e0e0e0;
-  overflow: hidden;
+  /* Se elimina overflow:hidden para permitir scroll si el contenido
+     llegara a desbordar en pantallas extremadamente pequeñas o estrechas */
 }

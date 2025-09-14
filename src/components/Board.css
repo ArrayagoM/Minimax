@@ -1,14 +1,20 @@
 .board {
   display: grid;
-  grid-template-columns: repeat(var(--grid-size), var(--cell-size));
-  grid-template-rows: repeat(var(--grid-size), var(--cell-size));
-  gap: var(--cell-gap);
+  /* CAMBIO CLAVE: Se usan unidades 'fr' (fracción) para que las columnas
+     se dividan el espacio disponible equitativamente, en lugar de un tamaño fijo. */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+
+  /* CAMBIO CLAVE: El tablero ahora tiene un ancho relativo a la pantalla,
+     lo que lo hace adaptable. 'vmin' usa la dimensión más pequeña 
+     (ancho o alto) para asegurar que quepa siempre. */
+  width: 90vmin;
+  height: 90vmin;
+  max-width: 500px;
+  max-height: 500px;
+
   padding: 10px;
   border-radius: 20px;
   background-color: var(--color-dark-accent);
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.5), inset 0 0 15px rgba(0, 0, 0, 0.4);
-}
-
-.board-row {
-  display: contents;
 }
