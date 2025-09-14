@@ -1,0 +1,14 @@
+.board {
+  display: grid;
+  grid-template-columns: repeat(var(--grid-size), var(--cell-size));
+  grid-template-rows: repeat(var(--grid-size), var(--cell-size));
+  gap: var(--cell-gap);
+  padding: 10px;
+  border-radius: 20px;
+  background-color: var(--color-dark-accent);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5), inset 0 0 15px rgba(0, 0, 0, 0.4);
+}
+
+.board-row {
+  display: contents;
+}

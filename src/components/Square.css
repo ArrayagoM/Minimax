@@ -1,0 +1,51 @@
+/* src/components/Square.css (REEMPLAZAR) */
+
+.square {
+  background: rgba(14, 14, 48, 0.5);
+  border: 3px solid var(--color-dark-accent);
+  float: left;
+  font-size: calc(var(--cell-size) * 0.5);
+  font-weight: 900;
+  line-height: 1;
+  height: var(--cell-size);
+  width: var(--cell-size);
+  padding: 0;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease-out;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.square:focus {
+  outline: none;
+}
+
+.value-x {
+  color: var(--color-primary);
+  text-shadow: var(--shadow-primary);
+}
+
+.value-o {
+  color: var(--color-secondary);
+  text-shadow: var(--shadow-secondary);
+}
+
+.winning-square {
+  animation: glow-win 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes glow-win {
+  from {
+    box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff;
+    border-color: #fff;
+  }
+  to {
+    box-shadow: 0 0 20px var(--color-secondary), 0 0 30px var(--color-primary),
+      0 0 40px var(--color-primary);
+    border-color: var(--color-secondary);
+  }
+}
